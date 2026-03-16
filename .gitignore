@@ -1,0 +1,11 @@
+# Thư mục kế hoạch không cần push lên git
+plans/
+
+# Các thư mục build của .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
