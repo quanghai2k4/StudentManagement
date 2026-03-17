@@ -7,12 +7,10 @@ namespace Application
     public class StudentUseCase
     {
         private readonly StudentRepository _repository;
-        private readonly DataStore _dataStore; // Cần dùng để lấy danh sách Major
 
-        public StudentUseCase(StudentRepository repository, DataStore dataStore)
+        public StudentUseCase(StudentRepository repository)
         {
             _repository = repository;
-            _dataStore = dataStore;
         }
 
         public List<Student> GetAllStudents()
@@ -27,7 +25,7 @@ namespace Application
 
         public List<Major> GetAllMajors()
         {
-            return _dataStore.Majors;
+            return _repository.RetrieveMajors();
         }
 
         public void AddStudent(Student student)

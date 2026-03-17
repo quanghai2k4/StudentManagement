@@ -17,8 +17,8 @@ namespace ConsoleApp
             // 2. Khởi tạo Repository (Sử dụng DataStore)
             StudentRepository repository = new StudentRepository(dataStore);
 
-            // 3. Khởi tạo UseCase (Lưu ý: UseCase cần cả Repository và DataStore để lấy danh sách Major)
-            StudentUseCase useCase = new StudentUseCase(repository, dataStore);
+            // 3. Khởi tạo UseCase (Lưu ý: UseCase hiện chỉ cần Repository)
+            StudentUseCase useCase = new StudentUseCase(repository);
 
             // 4. Khởi tạo UI (Chỉ sử dụng UseCase)
             StudentUI ui = new StudentUI(useCase);

@@ -48,5 +48,10 @@ namespace DataAccess
                 _dataStore.Students.Remove(student);
             }
         }
+
+        public List<Major> RetrieveMajors()
+        {
+            return _dataStore.Majors;
+        }
     }
 }
