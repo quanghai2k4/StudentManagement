@@ -7,12 +7,10 @@ namespace Application
     public class BookUseCase
     {
         private readonly BookRepository _repository;
-        private readonly DataStore _dataStore;
 
-        public BookUseCase(BookRepository repository, DataStore dataStore)
+        public BookUseCase(BookRepository repository)
         {
             _repository = repository;
-            _dataStore = dataStore;
         }
 
         public List<Book> GetAllBooks()
@@ -27,7 +25,7 @@ namespace Application
 
         public List<Category> GetAllCategories()
         {
-            return _dataStore.Categories;
+            return _repository.RetrieveCategories();
         }
 
         public void AddBook(Book book)

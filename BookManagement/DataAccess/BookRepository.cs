@@ -48,5 +48,11 @@ namespace DataAccess
                 _dataStore.Books.Remove(book);
             }
         }
+        
+        public List<Category> RetrieveCategories()
+        {
+            return _dataStore.Categories;
+        }
+
     }
 }

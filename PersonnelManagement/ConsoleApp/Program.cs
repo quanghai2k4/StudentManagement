@@ -11,7 +11,7 @@ namespace ConsoleApp
         {
             DataStore dataStore = new DataStore();
             PersonnelRepository repository = new PersonnelRepository(dataStore);
-            PersonnelUseCase useCase = new PersonnelUseCase(repository, dataStore);
+            PersonnelUseCase useCase = new PersonnelUseCase(repository);
             PersonnelUI ui = new PersonnelUI(useCase);
             ui.Run();
         }

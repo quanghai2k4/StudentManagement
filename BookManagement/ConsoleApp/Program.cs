@@ -11,7 +11,7 @@ namespace ConsoleApp
         {
             DataStore dataStore = new DataStore();
             BookRepository repository = new BookRepository(dataStore);
-            BookUseCase useCase = new BookUseCase(repository, dataStore);
+            BookUseCase useCase = new BookUseCase(repository);
             BookUI ui = new BookUI(useCase);
             ui.Run();
         }

@@ -7,12 +7,10 @@ namespace Application
     public class PersonnelUseCase
     {
         private readonly PersonnelRepository _repository;
-        private readonly DataStore _dataStore;
 
-        public PersonnelUseCase(PersonnelRepository repository, DataStore dataStore)
+        public PersonnelUseCase(PersonnelRepository repository)
         {
             _repository = repository;
-            _dataStore = dataStore;
         }
 
         public List<Personnel> GetAllPersonnel()
@@ -27,7 +25,7 @@ namespace Application
 
         public List<Department> GetAllDepartments()
         {
-            return _dataStore.Departments;
+            return _repository.RetrieveDepartments();
         }
 
         public void AddPerson(Personnel person)

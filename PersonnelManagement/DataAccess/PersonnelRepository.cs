@@ -48,5 +48,10 @@ namespace DataAccess
                 _dataStore.PersonnelList.Remove(person);
             }
         }
+
+        public List<Department> RetrieveDepartments()
+        {
+            return _dataStore.Departments;
+        }
     }
 }
